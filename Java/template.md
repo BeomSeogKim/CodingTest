@@ -1,6 +1,6 @@
 public class Main {
 
-    public static void anagram(String[] args) {
+    public static void a03매출액의종류(String[] args) {
         Scanner kb=new Scanner(System.in);
         int input1 = kb.nextInt();
         int input2 = kb.nextInt();
