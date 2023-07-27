@@ -1,4 +1,4 @@
-package ktw.basic.hashmap;
+package ktw.basic.hashmap_treeset;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -44,15 +44,15 @@ NO
 HashMap의 경우 put을 하게 되면 기존의 값을 대치해주는 효과를 지닌다.
  */
 
-public class Anagram {
+public class _02_Anagram {
 
     public static void main(String[] args) {
-        Anagram anagram = new Anagram();
+        _02_Anagram a02Anagram = new _02_Anagram();
 
         Scanner kb=new Scanner(System.in);
         String word1 = kb.next();
         String word2 = kb.next();
-        System.out.println(anagram.solution(word1, word2));
+        System.out.println(a02Anagram.solution(word1, word2));
 
     }
 

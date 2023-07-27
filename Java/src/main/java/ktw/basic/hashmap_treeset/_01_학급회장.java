@@ -1,4 +1,4 @@
-package ktw.basic.hashmap;
+package ktw.basic.hashmap_treeset;
 
 import java.util.HashMap;
 import java.util.Scanner;
