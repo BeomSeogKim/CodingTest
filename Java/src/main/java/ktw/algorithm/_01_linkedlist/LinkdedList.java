@@ -1,8 +1,5 @@
 package ktw.algorithm._01_linkedlist;
 
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * 연결리스트의 추상자료형
  * 1. 모든 데이터 출력 -> printAll()
@@ -44,6 +41,50 @@ public class LinkdedList {
         this.count++;
     }
 
+    public void insertLast(Integer data) {
+        this.insertAt(this.count, data);
+    }
+
+    public Node deleteAt(Integer index) {
+        if (index >= this.count || index < 0) {
+            throw new IllegalArgumentException("invalid index");
+        }
+
+        Node currentNode = this.head;
+
+        if (index == 0) {
+            Node deletedNode = this.head;
+            this.head = this.head.next;
+            this.count--;
+            return deletedNode;
+        } else {
+            for (int i = 0; i < index - 1; i++) {
+                currentNode = currentNode.next;
+            }
+            Node deletedNode = currentNode.next;
+            currentNode.next = deletedNode.next;
+            this.count--;
+            return deletedNode;
+        }
+    }
+
+    public Node deleteLast() {
+        return this.deleteAt(this.count - 1);
+    }
+
+    public Node getNodeAt(Integer index) {
+        if (index >= this.count || index < 0) {
+            throw new IllegalArgumentException("invalid index");
+        }
+        Node currentNode = this.head;
+
+        for (int i = 0; i < index; i++) {
+            currentNode = currentNode.next;
+        }
+
+        return currentNode;
+    }
+
     public void printAll() {
         var currentNode = this.head;
         StringBuilder sb = new StringBuilder("[");
@@ -57,5 +98,10 @@ public class LinkdedList {
         }
         sb.append("]");
         System.out.println(sb);
+    }
+
+    public void clear() {
+        this.head = null;
+        this.count = 0;
     }
 }

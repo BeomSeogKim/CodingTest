@@ -24,5 +24,38 @@ public class Executor {
         linkdedList.insertAt(4,4);
 
         linkdedList.printAll();
+
+        System.out.println("===== clear() 호출 =====");
+        linkdedList.clear();
+        linkdedList.printAll();
+
+        System.out.println("===== insertLast() 세번 호출 =====");
+        linkdedList.insertLast(0);
+        linkdedList.insertLast(1);
+        linkdedList.insertLast(2);
+        linkdedList.printAll();
+
+        System.out.println("===== deleteAt() 호출 =====");
+        linkdedList.deleteAt(0);
+        linkdedList.printAll();
+        linkdedList.deleteAt(1);
+        linkdedList.printAll();
+
+        System.out.println("===== deleteLast() 호출 =====");
+        linkdedList.insertLast(5);
+        linkdedList.deleteLast();
+        linkdedList.deleteLast();
+        linkdedList.printAll();
+
+        System.out.println("===== getNodeAt() 호출 =====");
+        linkdedList.insertLast(1);
+        linkdedList.insertLast(2);
+        linkdedList.insertLast(3);
+        linkdedList.insertLast(4);
+        linkdedList.insertLast(5);
+        linkdedList.insertLast(6);
+
+        Node node = linkdedList.getNodeAt(2);
+        System.out.println(node.data);
     }
 }
