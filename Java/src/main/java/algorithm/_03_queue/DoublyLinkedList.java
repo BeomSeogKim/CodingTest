@@ -1,4 +1,6 @@
-package ktw.algorithm._01_linkedlist;
+package algorithm._03_queue;
+
+import algorithm._01_linkedlist.Node;
 
 /**
  * 연결리스트의 추상자료형
@@ -10,11 +12,11 @@ package ktw.algorithm._01_linkedlist;
  * 6. 마지막 삭제 -> deleteLast()
  * 7. 인덱스 읽기 -> getNodeAt(index)
  */
-public class LinkdedList {
+public class DoublyLinkedList {
     public Node head;
     public Integer count;
 
-    public LinkdedList() {
+    public DoublyLinkedList() {
         this.head = null;
         this.count = 0;
     }

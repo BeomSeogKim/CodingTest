@@ -1,4 +1,4 @@
-package ktw.algorithm._01_linkedlist;
+package algorithm._01_linkedlist;
 
 public class Node {
 

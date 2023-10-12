@@ -1,4 +1,4 @@
-package ktw.algorithm.graph;
+package algorithm.graph;
 
 import java.util.LinkedList;
 

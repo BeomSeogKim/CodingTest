@@ -1,4 +1,4 @@
-package ktw.algorithm.trie;
+package algorithm.trie;
 
 import java.util.ArrayList;
 import java.util.HashMap;
