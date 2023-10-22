@@ -1,4 +1,4 @@
-package programmers.hash;
+package programmers.online.hash;
 
 import java.util.HashMap;
 
