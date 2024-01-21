@@ -32,7 +32,26 @@ public class _01_Binary_Tree_Right_Side_View {
             }
         }
         return answer;
+    }
 
+    List<Integer> rightside = new ArrayList();
+    public List<Integer> rightSideView2(TreeNode root) {
+        if (root == null) return new ArrayList<Integer>();
+
+        helper(root, 0);
+        return rightside;
+    }
+    public void helper(TreeNode node, int level) {
+        if (level == rightside.size()) {
+            rightside.add(node.val);
+        }
+
+        if (node.right != null) {
+            helper(node.right, level + 1);
+        }
+        if (node.left != null) {
+            helper(node.left, level + 1);
+        }
     }
     class TreeNode {
         int val;
