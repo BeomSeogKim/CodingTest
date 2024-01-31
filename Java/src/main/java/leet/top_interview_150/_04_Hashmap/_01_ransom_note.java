@@ -5,7 +5,7 @@ import java.util.HashMap;
 /*
  * https://leetcode.com/problems/ransom-note/?envType=study-plan-v2&envId=top-interview-150
  */
-public class Ransom_Note {
+public class _01_ransom_note {
 
     /*
      * 해당 솔루션의 경우 HashMap을 사용해 magazine의 철자마다 카운트를 세어놓고, ransomNote의 철자를 비교하는 방식
@@ -19,7 +19,6 @@ public class Ransom_Note {
         for(char c : magazine.toCharArray()){
             hashMap.put(c,hashMap.getOrDefault(c, 0) + 1);
         }
-
         for(char c : ransomNote.toCharArray()){
             if(!hashMap.containsKey(c)){
                 return false;
