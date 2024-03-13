@@ -1,6 +1,5 @@
 package codingsense._07_활용;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class BOJ_14501 {
