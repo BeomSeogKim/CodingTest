@@ -28,6 +28,7 @@ out/
 bin/
 !**/src/a01학급회장/**/bin/
 !**/src/test/**/bin/
+src/main/java/secret
 
 ### NetBeans ###
 /nbproject/private/
