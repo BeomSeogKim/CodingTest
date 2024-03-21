@@ -1,57 +1,64 @@
 package codingsense._12_DFS_BFS;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
 
 public class BOJ_2606 {
-    static int[][] graph;
+    static int N;
+    static int[][] arr;
     static boolean[] visited;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int computerNum = sc.nextInt();
-        int infoNum = sc.nextInt();
-
-        graph = new int[computerNum + 1][computerNum + 1];
-        visited = new boolean[computerNum + 1];
-        for (int i = 0; i < infoNum; i++) {
-            int node1 = sc.nextInt();
-            int node2 = sc.nextInt();
-
-            graph[node1][node2] = 1;
-            graph[node2][node1] = 1;
+        N = sc.nextInt();
+        int c = sc.nextInt();
+        arr = new int[N + 1][N + 1];
+        visited = new boolean[N + 1];
+        for (int i = 0; i < c; i++) {
+            int c1 = sc.nextInt();
+            int c2 = sc.nextInt();
+            arr[c1][c2] = 1;
+            arr[c2][c1] = 1;
         }
 
-        recursion(1);
+        bfs();
+//        dfs();
+    }
 
+    private static void bfs() {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(1);
+        visited[1] = true;
         int result = 0;
-        for (int i = 0; i < visited.length; i++) {
+        while (!queue.isEmpty()) {
+            Integer index = queue.poll();
+            for (int i = 1; i <= N; i++) {
+                if (arr[index][i] == 1 && !visited[i]) {
+                    visited[i] = true;
+                    queue.offer(i);
+                    result++;
+                }
+            }
+        }
+        System.out.println(result);
+    }
+
+    private static void dfs() {
+        solution(1);
+        int result = 0;
+        for (int i = 1; i <= N; i++) {
             if (visited[i]) {
                 result++;
             }
         }
-        System.out.println(result - 1); // 1번 노드는 제외
+        System.out.println(result - 1);
     }
 
-    static void recursion(int nodeNum) {
-        visited[nodeNum] = true;
-
-        for (int i = 0; i < graph.length; i++) {
-            if (graph[nodeNum][i] == 1 && !visited[i]) {
-                recursion(i);
-            }
-        }
-    }
-
-    private static void bfs(int nodeNum) {
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(nodeNum);
-
-        while (!queue.isEmpty()) {
-            Integer currentNum = queue.poll();
-            visited[currentNum] = true;
-            for (int i = 0; i < graph.length; i++) {
-                if (graph[currentNum][i] == 1 && !visited[i]) {
-                    queue.offer(i);
-                }
+    private static void solution(int index) {
+        visited[index] = true;
+        for (int i = 0; i < N; i++) {
+            if (arr[index][i] == 1 && !visited[i]) {
+                solution(i);
             }
         }
     }
