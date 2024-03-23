@@ -1,7 +1,6 @@
 package codingsense.복습;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class BOJ_3273 {
 
@@ -30,5 +29,17 @@ public class BOJ_3273 {
             }
         }
         System.out.println(count);
+
+        List<String> list = new ArrayList<>();
+        list.add();
+        list.remove();
+        list.contains();
+        Set<String> set = new HashSet<>();
+        set.add();
+        set.contains();
+        Map<String, String> map = new HashMap<>();
+        Set<Map.Entry<String, String>> entries = map.entrySet();
+
+        Collections.sort(list);
     }
 }
