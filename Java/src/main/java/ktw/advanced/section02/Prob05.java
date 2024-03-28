@@ -1,4 +1,4 @@
-package ktw.advanced;
+package ktw.advanced.section02;
 
 import java.util.*;
 class Prob05 {
@@ -10,13 +10,8 @@ class Prob05 {
             String from = voteInfo[0];
             String to = voteInfo[1];
             // 투표 정보 저장.
-            if (!voteMap.containsKey(to)) {
-                List<String> list = new ArrayList<>();
-                list.add(from);
-                voteMap.put(to, list);
-            } else {
-                voteMap.get(to).add(from);
-            }
+            voteMap.putIfAbsent(to, new ArrayList());
+            voteMap.get(to).add(from);
         }
 
         voteMap.entrySet().forEach(e -> {

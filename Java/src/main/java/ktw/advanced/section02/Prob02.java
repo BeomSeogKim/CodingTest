@@ -1,4 +1,4 @@
-package ktw.advanced;
+package ktw.advanced.section02;
 
 import java.util.Arrays;
 import java.util.HashMap;
