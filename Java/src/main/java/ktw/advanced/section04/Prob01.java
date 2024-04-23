@@ -5,19 +5,18 @@ class Prob01 {
     public int[] solution(int[] nums){
         int[] answer = new int[nums.length];
         int[][] infos = new int[nums.length][2];
-        for (int i = 0; i < nums.length; i++) {
+        for(int i = 0; i < nums.length; i++){
             int num = nums[i];
             int cnt = 0;
             while (num > 0) {
-                cnt += num % 2;
+                cnt += (num % 2);
                 num /= 2;
             }
             infos[i][0] = nums[i];
             infos[i][1] = cnt;
         }
-
         Arrays.sort(infos, (a, b) -> a[1] == b[1] ? a[0] - b[0] : a[1] - b[1]);
-        for (int i = 0; i < infos.length; i++) {
+        for (int i = 0; i < infos.length; i++){
             answer[i] = infos[i][0];
         }
         return answer;
